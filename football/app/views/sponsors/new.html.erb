@@ -1,0 +1,15 @@
+<h3>Add New Sponsor</h3>
+<%= form_for @sponsor do |f| %>
+	<% if @sponsor.errors.any? %>
+		<% @sponsor.errors.full_messages.each do |msg| %>
+			<div class="alert alert-danger"><%= msg %></div>
+		<% end %>
+	<% end %>
+	<div class="form-group">
+		<%= f.label :name %><br />
+		<%= f.text_field :name, class:'form-control' %><br />
+	</div>
+
+	<%= f.submit "Submit", class:'btn btn-primary' %>
+	<%= link_to "Cancel", sponsors_path, class:'btn btn-default' %>
+<% end %>

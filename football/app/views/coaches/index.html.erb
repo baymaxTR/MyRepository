@@ -1,0 +1,15 @@
+<h2>Coaches</h2>
+
+<table class="table table-striped">
+	<tr>
+		<th>Coach Name</th>
+		<th>Actions</th>
+	</tr>
+
+<% @coaches.each do |coach|%>
+	<tr>
+		<td><%= coach.first_name %> <%= coach.last_name %></td>
+		<td><%= link_to 'Edit', edit_coach_path(coach.id) %> | <%= link_to 'Delete', coach_path(coach), method: :delete, data: {confirm: 'Are you sure?'} %></td>
+	</tr>
+	<% end %>
+</table>

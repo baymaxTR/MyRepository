@@ -1,0 +1,55 @@
+<h3>Edit Team</h3>
+<%= form_for @soccer do |f| %>
+	<div class="form-group">
+		<%= f.label :Name %><br />
+		<%= f.text_field :title, class:'form-control' %><br />
+	</div>
+
+	<div class="form-group">
+		<%= f.label :Stadium %><br />
+		<%= f.select :pitch_id, Pitch.all.collect {|x| [x.name, x.id]},{:include_blank => 'Select One'},class:'form-control' %><br /><br />
+	</div>
+
+	<div class="form-group">
+		<%= f.label :Coach%><br />
+		<%= f.select :coach_id, Coach.all.collect {|x| [x.first_name + '' + x.last_name, x.id]},{:include_blank => 'Select One'},class:'form-control' %><br /><br />
+	</div>
+
+	<div class="form-group">
+		<%= f.label :Sponsor %><br />
+		<%= f.select :sponsor_id, Sponsor.all.collect {|x| [x.name, x.id]},{:include_blank => 'Select One'},class:'form-control' %><br /><br />
+	</div>
+
+	<div class="form-group">
+		<%= f.label :Founded %><br />
+		<%= f.text_field :founded, class:'form-control' %><br />
+	</div>
+
+	<div class="form-group">
+		<%= f.label :Trophy %><br />
+		<%= f.text_field :trophy, class:'form-control' %><br />
+	</div>
+
+	<div class="form-group">
+		<%= f.label :Path %><br />
+		<%= f.text_field :coverpath, class:'form-control' %><br />
+	</div>
+
+	<div class="form-group">
+		<%= f.label :Excerpt %><br />
+		<%= f.text_field :excerpt, class:'form-control' %><br />
+	</div>
+
+	<div class="form-group">
+		<%= f.label :Owner %><br />
+		<%= f.text_field :owner, class:'form-control' %><br />
+	</div>
+
+	<div class="form-group">
+		<%= f.label :Visit %><br />
+		<%= f.text_field :visit, class:'form-control' %><br />
+	</div>
+
+	<%= f.submit "Submit", class:'btn btn-primary' %>
+	<%= link_to "Cancel", soccers_path, class:'btn btn-default' %>
+<% end %>

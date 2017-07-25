@@ -1,0 +1,13 @@
+<div id="soccers-index">
+	<% @soccers.each_slice(100) do |soccer| %>
+		<div class="row" >
+			<% @soccers.each do |soccer| %>
+				<div class="col-md-4 col-sm-3">
+				<h3><%= soccer.title %></h3>
+				<%= image_tag(soccer.coverpath) %>
+				<%= link_to 'Read more', soccer_path(soccer),class:'btn btn-primary' %>
+				</div>
+			<% end %>
+		</div>
+	<% end %>
+</div>

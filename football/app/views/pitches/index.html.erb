@@ -1,0 +1,15 @@
+<h2>Stadiums</h2>
+
+<table class="table table-striped">
+	<tr>
+		<th>Stadium Name</th>
+		<th>Actions</th>
+	</tr>
+
+<% @pitches.each do |pitch|%>
+	<tr>
+		<td><%= pitch.name %></td>
+		<td><%= link_to 'Edit', edit_pitch_path(pitch.id) %> | <%= link_to 'Delete', pitch_path(pitch), method: :delete, data: {confirm: 'Are you sure?'} %></td>
+	</tr>
+	<% end %>
+</table>

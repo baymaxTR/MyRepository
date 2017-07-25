@@ -1,0 +1,26 @@
+<div id="soccers-show">
+	<h2><%= @soccer.title %></h2>
+	<div class="soccer-show-left">
+		<%= image_tag(@soccer.coverpath) %>
+	</div>
+	<div class="soccer-show-right">
+		<h3>Football info:</h3>
+		<ul>
+			<li><strong>Stadium:</strong> <%= @soccer.pitch.name %>/</li>
+			<li><strong>Coach:</strong> <%= @soccer.coach.first_name %> <%= @soccer.coach.last_name %>/</li>
+			<li><strong>Sponsor:</strong> <%= @soccer.sponsor.name %>/</li>
+			<li><strong>Founded:</strong> <%= @soccer.founded %>/</li>
+			<li><strong>Trophy:</strong> <%= @soccer.trophy %>/</li>
+			<li><strong>Owner:</strong> <%= @soccer.owner %>/</li>
+			<li><strong>nation:</strong> <%= @soccer.nation %>/</li>
+
+		</ul>
+		<%= link_to "Visit us" ,@soccer.visit,class:'btn btn-success',target:'_blank' %>
+	</div>
+	<div class="clearfix"></div>
+	<h4>Expert</h4>
+	<p><%= @soccer.excerpt %>/ </p>
+
+	<%= link_to 'Edit', edit_soccer_path(@soccer.id) %> | <%= link_to 'Delete', soccer_path(@soccer), method: :delete, data: {confirm: 'Are you sure?'} %>
+
+</div>

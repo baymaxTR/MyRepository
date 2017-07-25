@@ -1,0 +1,15 @@
+<h2>Sponsors</h2>
+
+<table class="table table-striped">
+	<tr>
+		<th>Sponsor Name</th>
+		<th>Actions</th>
+	</tr>
+
+<% @sponsors.each do |sponsor|%>
+	<tr>
+		<td><%= sponsor.name %></td>
+		<td><%= link_to 'Edit', edit_sponsor_path(sponsor.id) %> | <%= link_to 'Delete', sponsor_path(sponsor), method: :delete, data: {confirm: 'Are you sure?'} %></td>
+	</tr>
+	<% end %>
+</table>
